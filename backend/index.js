@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const config = require('./config.json');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const authenticateToken = require('./utilities');
@@ -297,17 +296,6 @@ app.get('/search-notes', authenticateToken, async (req, res) => {
     }
 });
 
-
-// app.listen(process.env.PORT, () => {
-//     // mongoose.connect(config.connectionString), {
-//     //     useNewUrlParser: true,
-//     //     useUnifiedTopology: true,
-//     //     useCreateIndex: true,
-//     // };
-    
-
-//     console.log(`Server is running on port ${process.env.PORT}`);
-// });
 
 app.listen(process.env.PORT, async () => {
     try {
